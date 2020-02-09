@@ -87,22 +87,22 @@ def download(year, detector_ids):
         url = url + "lane3=on"
 
         print(url)
-        # webbrowser.open(url, new=2)
-        # time.sleep(10)
-        # os.rename(r'pems_output.xlsx', r'' + str(i) + "_" + str(year) + ".xlsx")
+        webbrowser.open(url, new=2)
+        time.sleep(10)
+        os.rename(r'pems_output.xlsx', r'' + str(i) + "_" + str(year) + ".xlsx")
 
-        file_name = str(i) + "_" + str(year) + ".xlsx"
-        file_path = os.getcwd() + "/" + file_name
-        data = {'username' : 'ed.romero@berkeley.edu', 'password' : 'W3+ulperk',
-                'redirect' : "%2F%3Freport_form%3D1%26dnode%3DVDS%26content%3Dloops%26tab%3Ddet_timeseries%26export%3Dxls%26station_id%3D403250%26s_time_id%3D1488844800%26s_time_id_f%3D03%252F07%252F2017%2B00%253A00%26e_time_id%3D1489103940%26e_time_id_f%3D03%252F09%252F2017%2B23%253A59%26tod%3Dall%26tod_from%3D0%26tod_to%3D0%26dow_0%3Don%26dow_1%3Don%26dow_2%3Don%26dow_3%3Don%26dow_4%3Don%26dow_5%3Don%26dow_6%3Don%26holidays%3Don%26q%3Dflow%26q2%3D%26gn%3D5min%26agg%3Don%26lane1%3Don%26lane2%3Donlane3%3Don",
-                'login' : 'Login'}
-        r = requests.post('http://pems.dot.ca.gov/', data=data, headers = dict(referer=url))
-        print('status', r.ok)
-        r = requests.get(url, allow_redirects=True)
-        with open(file_path, 'wb') as f:
-            f.write(r.content)
-            f.close()
-            r.close()
+        # file_name = str(i) + "_" + str(year) + ".xlsx"
+        # file_path = os.getcwd() + "/" + file_name
+        # data = {'username' : 'ed.romero@berkeley.edu', 'password' : 'W3+ulperk',
+        #         'redirect' : "%2F%3Freport_form%3D1%26dnode%3DVDS%26content%3Dloops%26tab%3Ddet_timeseries%26export%3Dxls%26station_id%3D403250%26s_time_id%3D1488844800%26s_time_id_f%3D03%252F07%252F2017%2B00%253A00%26e_time_id%3D1489103940%26e_time_id_f%3D03%252F09%252F2017%2B23%253A59%26tod%3Dall%26tod_from%3D0%26tod_to%3D0%26dow_0%3Don%26dow_1%3Don%26dow_2%3Don%26dow_3%3Don%26dow_4%3Don%26dow_5%3Don%26dow_6%3Don%26holidays%3Don%26q%3Dflow%26q2%3D%26gn%3D5min%26agg%3Don%26lane1%3Don%26lane2%3Donlane3%3Don",
+        #         'login' : 'Login'}
+        # r = requests.post('http://pems.dot.ca.gov/', data=data, headers = dict(referer=url))
+        # print('status', r.ok)
+        # r = requests.get(url, allow_redirects=True)
+        # with open(file_path, 'wb') as f:
+        #     f.write(r.content)
+        #     f.close()
+        #     r.close()
 
 
 # local testing
